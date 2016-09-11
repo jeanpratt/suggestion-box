@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Suggestion Box</title>
+	<script type="text/javascript" src="js/vendor/angular.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet" />
+	<link href="css/style.css" rel="stylesheet" />
+</head>
+<body ng-app="SuggestionBox" ng-controller="HomeController">
+	<div class="jumbotron">
+		<div class="overlay">
+			<h1>The Muffin Man</h1>
+			<p>Muffins for everyone</p>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-9 blog-main">
+				<div class="blog-post">
+					<h2 class="blog-post-title">Orange Marmalade Muffins</h2>
+					<p class="blog-post-meta">
+						February 30 by D. Lane
+					</p>
+					<p>
+						This blog post shows a few different types of content that's 
+						supported and styled with Bootstrap. Basic typography, images, 
+						and code are all supported.
+					</p>
+					<hr><!-- Insert picture here -->
+					<div class="row">
+						<div class="col-lg-3">
+							<h3>Yield</h3>
+							<p>15 muffins</p>
+						</div>
+						<div class="col-lg-3">
+							<h3>Prep Time</h3>
+							<p>30 minutes</p>
+						</div>
+						<div class="col-lg-3">
+							<h3>Cook Time</h3>
+							<p>Gluten, dairy</p>
+						</div>
+						<div class="col-lg-3">
+							<h3>Difficulty</h3>
+							<p>Easy</p>
+						</div>
+					</div>
+					<p>
+						Cum sociis natoque penatibus et magnis 
+						nascetur ridiculus mus. Aenean eu leo quam. 
+						Pellentesque ornare sem lacinia quam venenatis 
+						vestibulum. Sed posuere consectetur est at lobortis. 
+						Cras mattis consectetur purus sit amet fermentum.
+					</p>
+					<p>
+						Cras mattis consectetur purus sit amet fermentum. 
+						Sed posuere consectetur est at lobortis.
+					</p>
+				</div>
+				<div class="panel-group">
+					<div class="panel panel-recipe">
+						<div class="panel-heading" id="panel-header">
+							<h3 class="panel-title">Recipe</h3>
+							<span class="glyphicon glyphicon-print" aria-hidden="true"></span>
+						</div>
+						<div class="panel-body">
+							<!-- Insert image here -->
+						</div>
+					</div>
+					<div class="panel panel-recipe">
+						<div class="panel-heading">
+							<h3 class="panel-title">Ingredients</h3>
+						</div>
+						<div class="panel-body">
+							<ul>
+								<li>1 cup Flour</li>
+								<li>2 cups Sugar</li>
+								<li>1 cup Orange Juice</li>
+								<li>2 cups Orange Marmalade</li>
+							</ul>
+						</div>
+					</div>
+					<div class="panel panel-recipe">
+						<div class="panel-heading">
+							<h3 class="panel-title">Instructions</h3>
+						</div>
+						<div class="panel-body">
+							<ol>
+								<li>Preheat oven to 350 degrees</li>
+								<li>Make muffins</li>
+								<li>Eat muffins</li>
+								<li>Turn off oven</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+				<h2>Comments</h2>
+				<ul class="media-list">
+					<li ng-repeat="post in posts | orderBy: '-upvotes'">
+						<div class="media-left">
+							<a href="#">
+								{{ post.upvotes }}
+							</a>
+						</div>
+						<div class="media-body">
+							<h4>{{ post.title }}</h4>
+								{{ post.note }}
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="col-sm-2 col-sm-offset-1 blog-sidebar">
+				<div class="sidebar-module">
+					<h4>About</h4>
+				</div>
+			</div>
+		</div>
+	</div>
+	 
+	<!-- Modules -->
+	<script type="text/javascript" src="js/app.js"></script>
+	 
+	<!-- Controllers -->
+	<script type="text/javascript" src="js/controllers/HomeController.js"></script>
+	 
+	<!-- Services -->
+	<script type="text/javascript" src="js/services/suggestions.js"></script>
+	
+	<!-- Vendor -->
+	<script type="text/javascript" src="js/vendor/jquery.min.js"></script>
+	<script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
+</body>
+</html>
